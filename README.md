@@ -1,3 +1,6 @@
+# UPDATE
+This project is offline currently. The endpoint below will not work
+
 # crime-in-sc-flask
 Flask application providing a REST API endpoint for county crime data in South Carolina
 
