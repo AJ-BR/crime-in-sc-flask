@@ -9,7 +9,7 @@ Prerequisites:
 1) Go to the `crime-sc-flask/` directory
 2) To install the dependencies, type `pip install -e .`. This will install required dependencies
 3) Run `flask run`
-4) The server can be accessed at `localhost:5000`
+4) The server can be accessed at `127.0.0.1:5000`
 5) Append `/fbi/?location={location}&year={year}&crime={crime}` to the end of the URL. 
 
 For example, to see how many robberies occurred in Myrtle Beach in 2021, the url would be constructed as below:
