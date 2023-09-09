@@ -1,80 +1,224 @@
-# UPDATE
-This project is offline currently. The endpoint below will not work
-
 # crime-in-sc-flask
-Flask application providing a REST API endpoint for county crime data in South Carolina
-
-### A working build of this project is hosted on AWS Lightsail
-https://crime-api.5njplgatf1uts.us-east-1.cs.amazonlightsail.com/sled/?county={county}&year={year}&crime={crime}
-Refer to step 5) to see how to correctly form the URL. For example if you wanted to get the number of larceny crimes that occured in Aiken county in 2021, the URL would be https://crime-api.5njplgatf1uts.us-east-1.cs.amazonlightsail.com/sled/?county=aiken&year=2021&crime=larceny
-
-
-## Build Instructions:
-
-NOTE: This project depends on a database that already contains the crime data. Without that database, this project will not build.
+Flask application providing a REST API endpoint for city/town/county crime data in South Carolina
 
 Prerequisites:
   * Python 3.10.*
   * Flask 2.2.3
-  * Pip 22.2.*
-  * Pipenv 2023.2.*
+  * Pip 22.3.*
   
-1) In the `crime-sc-flask/` directory, run `pipenv shell`
-2) Go to the `main/`directory
+1) Go to the `crime-sc-flask/` directory
+2) To install the dependencies, type `pip install -e .`. This will install required dependencies
 3) Run `flask run`
 4) The server can be accessed at `localhost:5000`
-5) Append `/sled/?county={county}&year={year}&crime={crime}` to the end of the URL. 
+5) Append `/fbi/?location={location}&year={year}&crime={crime}` to the end of the URL. 
 
-The counties are:
-    abbeville,
-    aiken,
-    allendale,
-    anderson,
-    bamberg,
-    barnwell,
-    beaufort,
-    berkeley,
-    calhoun,
-    charleston,
-    cherokee,
-    chester,
-    chesterfield,
-    clarendon,
-    colleton,
-    darlington,
-    dillon,
-    dorchester,
-    edgefield,
-    fairfield,
-    florence,
-    georgetown,
-    greenville,
-    greenwood,
-    hampton,
-    horry,
-    jasper,
-    kershaw,
-    lancaster,
-    laurens,
-    lee,
-    lexington,
-    marion,
-    marlboro,
-    mcCormick,
-    newberry,
-    oconee,
-    orangeburg,
-    pickens,
-    richland,
-    saluda,
-    spartanburg,
-    sumter,
-    union,
-    williamsburg,
-    york
+For example, to see how many robberies occurred in Myrtle Beach in 2021, the url would be constructed as below:
+
+`http://127.0.0.1:5000/fbi/?location=myrtle-beach&year=2021&crime=robbery`
+
+The total list of locations (including counties) are:
+    "sullivans-island",
+    "williamston",
+    "ridgeville",
+    "cottageville",
+    "rock-hill",
+    "west-union",
+    "fort-mill",
+    "cherokee",
+    "johnsonville",
+    "greenville",
+    "charleston",
+    "new-ellenton",
+    "calhoun-falls",
+    "fairfield",
+    "nichols",
+    "clarendon",
+    "liberty",
+    "summerton",
+    "gifford",
+    "st.-stephen",
+    "chapin",
+    "kingstree",
+    "st.-george",
+    "bamberg",
+    "west-pelzer",
+    "saluda",
+    "bennettsville",
+    "honea-path",
+    "pickens",
+    "lincolnville",
+    "quinby",
+    "union",
+    "summerville",
+    "port-royal",
+    "gaffney",
+    "due-west",
+    "mccormick",
+    "williston",
+    "laurens",
+    "bath",
+    "timmonsville",
+    "surfside-beach",
+    "loris",
+    "abbeville",
+    "jonesville",
+    "bluffton",
+    "hardeeville",
+    "dorchester",
+    "darlington",
+    "walterboro",
+    "oconee",
+    "holly-hill",
+    "goose-creek",
+    "dillon",
+    "williamsburg",
+    "denmark",
+    "springfield",
+    "inman",
+    "bonneau",
+    "pacolet",
+    "manning",
+    "mcbee",
+    "lancaster",
+    "latta",
+    "tega-cay",
+    "jasper",
+    "travelers-rest",
+    "tigerville",
+    "greenwood",
+    "westminster",
+    "estill",
+    "aiken",
+    "ninety-six",
+    "trenton",
+    "richland",
+    "society-hill",
+    "jamestown",
+    "aynor",
+    "hemingway",
+    "moncks-corner",
+    "santee",
+    "harleyville",
+    "hanahan",
+    "scranton",
+    "bethune",
+    "north-charleston",
+    "edisto-beach",
+    "bowman",
+    "columbia",
+    "beaufort",
+    "clover",
+    "belton",
+    "seneca",
+    "pageland",
+    "woodruff",
+    "hartsville",
+    "pawleys-island",
+    "varnville",
+    "cheraw",
+    "blacksburg",
+    "north-myrtle-beach",
+    "jackson",
+    "sumter",
+    "kershaw",
+    "barnwell",
+    "greeleyville",
+    "olanta",
+    "campobello",
+    "camden",
+    "salem",
+    "lee",
+    "fairfax",
+    "yemassee",
+    "horry",
+    "olar",
+    "ridge-spring",
+    "pelion",
+    "turbeville",
+    "norway",
+    "prosperity",
+    "colleton",
+    "branchville",
+    "orangeburg",
+    "gaston",
+    "florence",
+    "pamplico",
+    "eutawville",
+    "marion",
+    "great-falls",
+    "st.-matthews",
+    "duncan",
+    "allendale",
+    "greer",
+    "marlboro",
+    "walhalla",
+    "conway",
+    "blythewood",
+    "elloree",
+    "easley",
+    "irmo",
+    "isle-of-palms",
+    "lake-city",
+    "clemson",
+    "ware-shoals",
+    "folly-beach",
+    "johnston",
+    "lake-view",
+    "york",
+    "coward",
+    "wellford",
+    "spartanburg",
+    "anderson",
+    "mccoll",
+    "andrews",
+    "winnsboro",
+    "berkeley",
+    "batesburg-leesville",
+    "whitmire",
+    "cayce",
+    "blackville",
+    "central",
+    "springdale",
+    "ridgeland",
+    "clio",
+    "west-columbia",
+    "lexington",
+    "landrum",
+    "north-augusta",
+    "mount-pleasant",
+    "newberry",
+    "clinton",
+    "calhoun",
+    "chesterfield",
+    "perry",
+    "fort-lawn",
+    "cowpens",
+    "chesnee",
+    "hampton",
+    "simpsonville",
+    "lane",
+    "edgefield",
+    "bishopville",
+    "cameron",
+    "pendleton",
+    "wagener",
+    "chester",
+    "fountain-inn",
+    "ehrhardt",
+    "north",
+    "georgetown",
+    "elgin",
+    "myrtle-beach",
+    "lamar",
+    "mauldin",
+    "mullins",
+    "salley",
+    "lyman",
+    "swansea"
     
 The years are:
-  1991,
+    1990,
+    1991,
     1992,
     1993,
     1994,
@@ -106,28 +250,34 @@ The years are:
     2021
     
 The crimes are:
-   "kidnapping"
-    "shoplifting"
-    "vandalism"
-    "theft-from-vehicle"
-    "gta"
-    "theft-from-building"
-    "sexual-exposure"
-    "statutory-rape"
-    "murder"
-    "larceny"
-    "animal-cruelty"
-    "simple-assault"
-    "rape"
-    "forgery"
-    "weapons-violations"
-    "stolen-property"
-    "pick-pocketing"
-    "burglary"
-    "arson"
-    "prostitution"
-    "forcible-sodomy"
-    "aggravated-assault"
-    "robbery"
-    "drug-violations"
-   
+    "all", 
+    "aggravated-assault", 
+    "all-other-offenses-(except-traffic)", 
+    "arson", 
+    "burglary", 
+    "curfew-and-loitering-law-violations", 
+    "disorderly-conduct", 
+    "driving-under-the-influence", 
+    "drug-abuse-violations---grand-total", 
+    "drunkenness", 
+    "embezzlement", 
+    "forgery-and-counterfeiting", 
+    "fraud", "gambling---total", 
+    "human-trafficking---commercial-sex-acts", 
+    "human-trafficking---involuntary-servitude", 
+    "larceny---theft", 
+    "liquor-laws", 
+    "manslaughter-by-negligence", 
+    "motor-vehicle-theft", 
+    "murder-and-nonnegligent-manslaughter", 
+    "offenses-against-the-family-and-children", 
+    "prostitution-and-commercialized-vice", 
+    "rape", 
+    "robbery", 
+    "sex-offenses-(except-rape--and-prostitution-and-commercialized-vice)", 
+    "simple-assault", 
+    "stolen-property:-buying--receiving--possessing",
+    "suspicion", 
+    "vagrancy", 
+    "vandalism", 
+    "weapons:-carrying--possessing--etc."
