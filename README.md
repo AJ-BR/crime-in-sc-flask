@@ -20,7 +20,7 @@ For example, to see how many robberies occurred in Myrtle Beach in 2021, the url
 
 Or 
 
-#### `https://sc-crime-api.onrender.com/fbi/?location=myrtle-beach&year=2021&crime=robbery`
+#### https://sc-crime-api.onrender.com/fbi/?location=myrtle-beach&year=2021&crime=robbery
 
 The total list of locations (including counties) are:
     "sullivans-island",
