@@ -14,7 +14,7 @@ setup(
     install_requires=[
         'pytest>=7.2.2',
         'requests>=2.28.2',
-        'pandas>=2.1.0',
+        'pandas>=1.3.5',
         'flask>=2.2.3'
     ]
 )
