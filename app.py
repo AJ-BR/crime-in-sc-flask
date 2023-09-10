@@ -6,8 +6,8 @@ import pandas as pd
 app = Flask(__name__)
 
 with app.app_context():
-    agency_data_df = pd.read_csv('src/resources/agency_data.csv')
-    crime_data_df = pd.read_csv('src/resources/ori_crime_year_data.csv')
+    agency_data_df = pd.read_csv('resources/agency_data.csv')
+    crime_data_df = pd.read_csv('resources/ori_crime_year_data.csv')
 
 
 def run():

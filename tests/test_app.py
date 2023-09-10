@@ -3,7 +3,7 @@ import os.path
 
 import pytest
 
-from src.app import home, app
+from app import home, app
 
 
 @pytest.fixture
@@ -13,8 +13,8 @@ def app_context():
 
 
 def test_files_exist():
-    assert os.path.isfile('src/resources/agency_data.csv') is True
-    assert os.path.isfile('src/resources/ori_crime_year_data.csv') is True
+    assert os.path.isfile('resources/agency_data.csv') is True
+    assert os.path.isfile('resources/ori_crime_year_data.csv') is True
 
 
 def test_home(app_context):
