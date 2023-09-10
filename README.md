@@ -1,6 +1,8 @@
 # crime-in-sc-flask
 Flask application providing a REST API endpoint for city/town/county crime data in South Carolina
 
+A working build can be found on `https://sc-crime-api.onrender.com/`
+
 Prerequisites:
   * Python 3.10.*
   * Flask 2.2.3
@@ -15,6 +17,10 @@ Prerequisites:
 For example, to see how many robberies occurred in Myrtle Beach in 2021, the url would be constructed as below:
 
 `http://127.0.0.1:5000/fbi/?location=myrtle-beach&year=2021&crime=robbery`
+
+Or 
+
+`https://sc-crime-api.onrender.com/fbi/?location=myrtle-beach&year=2021&crime=robbery`
 
 The total list of locations (including counties) are:
     "sullivans-island",
