@@ -11,7 +11,7 @@ with app.app_context():
 
 
 def run():
-    app.run(debug=True, use_reloader=False)
+    app.run(debug=False)
 
 
 # Landing point of the url
