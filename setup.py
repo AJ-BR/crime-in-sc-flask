@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name='crime-in-sc-flask',
     version='0.1dev',
-    packages=['src', 'src.tests'],
+    packages=['.', 'tests'],
     license='Creative Commons Attribution-Noncommercial-Share Alike license',
     # entrypoints={
     #     'console_scripts': [
