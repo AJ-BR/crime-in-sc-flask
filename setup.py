@@ -15,6 +15,8 @@ setup(
         'pytest>=7.2.2',
         'requests>=2.28.2',
         'pandas>=1.3.5',
-        'flask>=2.2.3'
+        'flask>=2.2.3',
+        'gunicorn>=21.2.0'
+
     ]
 )
